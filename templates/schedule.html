@@ -1,0 +1,29 @@
+{% extends "layout/app.html" %}   
+
+{% block content %}
+    <main>
+      <!-- Page Content goes here -->
+      <div class="container">
+        <table class="centered responsive-table">
+          <thead>
+            <tr>
+                <th>Titulo</th>
+                <th>Data</th>
+                <th>Criação</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {% for event in events %}
+            <tr>
+              <td>{{ event.title }}</td>
+              <td>{{ event.date_event }}</td>
+              <td>{{ event.created_at }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+{% endblock %}
