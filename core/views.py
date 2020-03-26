@@ -34,3 +34,21 @@ def index(request):
             'user': user,
             }
     return render(request, 'schedule.html', data)
+
+@login_required(login_url='/login/')
+def store(request):
+    if request.POST:
+        title = request.POST.get('title')
+        description = request.POST.get('description')
+        date_event = request.POST.get('date_event')
+        hour_event = request.POST.get('hour_event')
+        user = request.user
+
+        datetime_event = date_event + ' ' + hour_event
+
+        Event.objects.create(title=title,
+                description=description,
+                date_event=datetime_event,
+                user=user)
+    return redirect('/')
+
