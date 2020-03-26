@@ -11,6 +11,18 @@
   </body>
 
   <script charset="utf-8">
+    $(document).ready(function(){
+      $('.datepicker').datepicker({
+        format: 'yyyy-mm-dd',
+      });
+    });
+
+    $(document).ready(function(){
+      $('.timepicker').timepicker({
+        twelveHour: false,
+      });
+    });
+
     $(document).ready(function() {
       $('.dropdown-trigger').dropdown();
     });
